@@ -1,0 +1,39 @@
+### Project Description: Predicting Mobile Device Price Range Using Various Classifiers
+
+#### Objective:
+The objective of this project is to predict the price range of mobile devices based on their characteristics. The dataset for this project is 'mobile.csv.' Various classifiers, including Logistic Regression, Support Vector Machines (SVM), and K-Nearest Neighbors (KNN), will be implemented to achieve this goal.
+
+#### Steps to Follow:
+
+1. **Data Preparation:**
+   - Split the dataset into training and testing sets with a test size of 25% of the total observations, using `random_state=123`.
+
+2. **Data Scaling:**
+   - Decide whether data scaling is necessary for each classifier to improve performance.
+
+3. **Model Implementation:**
+   - **Logistic Regression:**
+     - Use solver='lbfgs' and max_iter=10000. No hyperparameter tuning is needed.
+   - **Support Vector Machines (SVM):**
+     - Polynomial Kernel:
+       - Test degrees 1, 2, and 3.
+       - Test a range for C between 1 and 75 with increments of 0.5.
+     - Radial Basis Kernel:
+       - Test gamma between 0.0005 and 0.01 with increments of 0.0001.
+       - Test a range for C between 5 and 75 with increments of 0.5.
+   - **K-Nearest Neighbors (KNN):**
+     - Test the performance for any number of neighbors between 3 and 125.
+     - Use weights='uniform' or 'distance'.
+
+4. **Model Evaluation:**
+   - Fit each classifier on the training set.
+   - Measure the overall accuracy on the test set.
+   - For each classifier, determine the best hyperparameters from the specified ranges.
+   - Show confusion matrices for the best results.
+
+5. **Cross-Validation:**
+   - Repeat all steps using 5-Fold cross-validation.
+   - Report the best hyperparameters found for each method.
+   - Rank the different methods according to the overall cross-validated accuracy.
+
+By following these steps, the project aims to identify the most accurate classifier for predicting the price range of mobile devices based on their characteristics.
